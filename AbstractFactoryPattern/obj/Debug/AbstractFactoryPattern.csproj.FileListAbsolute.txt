@@ -1,0 +1,4 @@
+C:\Users\santosh\Documents\Visual Studio 2010\Projects\WindowsApplication\DesignPatterns\AbstractFactoryPattern\bin\Debug\AbstractFactoryPattern.dll
+C:\Users\santosh\Documents\Visual Studio 2010\Projects\WindowsApplication\DesignPatterns\AbstractFactoryPattern\bin\Debug\AbstractFactoryPattern.pdb
+C:\Users\santosh\Documents\Visual Studio 2010\Projects\WindowsApplication\DesignPatterns\AbstractFactoryPattern\obj\Debug\AbstractFactoryPattern.dll
+C:\Users\santosh\Documents\Visual Studio 2010\Projects\WindowsApplication\DesignPatterns\AbstractFactoryPattern\obj\Debug\AbstractFactoryPattern.pdb
