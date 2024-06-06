@@ -5,8 +5,15 @@ Ensure a class has only one instance, and provide a global point of access to it
 - Class is marked with **sealed** keyword to prevent further derviation of class  
 - **public static** ensures the global access point.  
 - **readonly** ensures assignment takes place in static constructor only  
+```
+    static Singleton()
+    {
+        Console.WriteLine("static constructor is called");
+        singleton = new Singleton();
+    }
+```
 - if **static constructor** is not used then the private **variable** can be directly instantiated  
 ```
-private static Singleton2 singleton =new Singleton2();
+private static readonly Singleton2 singleton =new Singleton2();
 ``` 
 
