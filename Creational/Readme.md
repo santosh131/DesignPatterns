@@ -44,3 +44,73 @@ public Employee(Employee origEmployee){
     this.Id = origEmployee.Id;
 }
 ```
+
+## Builder
+### Separate the construction of complex object from its representation so that the same construction process can create different representation  
+
+It is useful for creating complex objects having multiple parts.  
+- Construction process does not depend on how parts are assembled.  
+- Using this pattern same construction process can be applied to different products
+- Notice in the Example2, IProductBuilder has set of methods that returns IProductBuilder, this helps in applying **method chaining**
+- Players involved in builder pattern
+1. Director - Creates the final product using the Builder. Decides the sequence of steps to build the product.  
+QueryDirector (or) ProductDirector   
+```
+//Example 1
+public class QueryDirector
+{
+    private IQueryBuilder? _queryBuilder;
+
+    public void Construct(IQueryBuilder queryBuilder)
+    {
+        _queryBuilder = queryBuilder;
+        _queryBuilder.Step1();
+        _queryBuilder.Step2();
+        ...
+    }
+}
+//Example 2
+public class ProductDirector
+{
+    private IProductBuilder? _productBuilder;
+    public void Construct(IProductBuilder productBuilder){
+        _productBuilder = productBuilder;
+
+        _productBuilder
+            .AddPart1()
+            .AddPart2()
+            .AddPart3();
+    }
+}
+``` 
+2. IBuilder or abstract class - contains methods that are to be implemented by concrete class   
+```
+public interface IQueryBuilder{
+    void Step1();
+    void Step2();
+    void Step3();
+    FinalQuery GetFinalQuery();
+}
+```
+3. Builder(Concrete class of IBuilder) - implements the IBuilder interface  
+```
+public class Process1QueryBuilder : IQueryBuilder
+{
+    ...
+}
+public class Process2QueryBuilder : IQueryBuilder
+{
+    ...
+}
+```
+4. Product  
+```
+public class FinalQuery
+{
+    ...
+}
+```
+
+
+
+
