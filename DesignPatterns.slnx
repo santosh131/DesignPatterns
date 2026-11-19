@@ -1,0 +1,19 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="Mixed Platforms" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="AbstractFactoryPattern/AbstractFactoryPattern.csproj" Id="9d3becaa-1397-47cc-8dff-ad4e88fa716c">
+    <Build Solution="*|x86" Project="false" />
+  </Project>
+  <Project Path="Creational/Builder/Builder.csproj" />
+  <Project Path="DesignPatterns/DesignPatterns.csproj" Id="c785c5aa-3172-421c-a14d-6c3aaf288178">
+    <Platform Project="x86" />
+    <Build Solution="*|Any CPU" Project="false" />
+  </Project>
+  <Project Path="FactoryPattern/FactoryPattern.csproj" Id="26cd38a9-d2b8-4587-a700-48c0eb798d91">
+    <Build Solution="*|x86" Project="false" />
+  </Project>
+  <Project Path="Structural/Decorator/Decorator.csproj" />
+</Solution>
