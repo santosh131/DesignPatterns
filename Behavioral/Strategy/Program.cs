@@ -21,8 +21,8 @@ var serviceProvider = new ServiceCollection()
     .BuildServiceProvider();
 
 var strategyContextOrService = serviceProvider.GetService<StrategyContextOrService>();
-strategyContextOrService.ExecuteStrategy("A");
-strategyContextOrService.ExecuteStrategy("B");
-strategyContextOrService.ExecuteStrategy("C");
+strategyContextOrService?.ExecuteStrategy("A");
+strategyContextOrService?.ExecuteStrategy("B");
+strategyContextOrService?.ExecuteStrategy("C");
 Console.ReadLine();
 

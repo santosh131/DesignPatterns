@@ -20,7 +20,7 @@ namespace Decorator
 
         public void PostOperation(EmployeeModel employee)
         {
-            EmployeeModel eModel = EmployeeData.Employees.FirstOrDefault(e => e.Id == employee.Id);
+            var eModel = EmployeeData.Employees.FirstOrDefault(e => e.Id == employee.Id) ?? null;
             if (eModel != null)
             {
                 eModel.Name = employee.Name;

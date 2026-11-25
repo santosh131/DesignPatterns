@@ -1,2 +1,0 @@
-﻿// Seeing this comment implies that the code generation for file 'C:\Users\santosh\Documents\Visual Studio 2010\Projects\WindowsApplication\DesignPatterns\DesignPatterns\FactoryPattern.edmx'
-// failed. See the ErrorList for details.
