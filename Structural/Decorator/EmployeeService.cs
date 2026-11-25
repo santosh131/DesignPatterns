@@ -12,7 +12,8 @@ namespace Decorator
 
         public EmployeeModel GetEmployeeDetails(int id)
         {
-           return EmployeeData.Employees.Find(e => e.Id == id) ?? new EmployeeModel();
+            Console.WriteLine($"EmployeeService - Fetching details for employee with ID: {id}");
+            return EmployeeData.Employees.Find(e => e.Id == id) ?? new EmployeeModel();
         }
     }
 }

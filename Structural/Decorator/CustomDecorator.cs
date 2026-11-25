@@ -4,24 +4,15 @@ using System.Text;
 
 namespace Decorator
 {
-    public abstract class CustomDecorator : IEmployeeService
+    public class CustomDecorator : ICustomDecorator
     {
-        public List<EmployeeModel> Employees { get; set; }
-
         private readonly IEmployeeService _employeeService;
+        
         public CustomDecorator(IEmployeeService employeeService)
         {
-            _employeeService = employeeService;
-            if (Employees == null)
-            {
-                Employees = new List<EmployeeModel>
-                {
-                    new EmployeeModel { Id = 1, Name = "John Doe" },
-                    new EmployeeModel { Id = 2, Name = "Jane Smith" },
-                    new EmployeeModel { Id = 3, Name = "Bob Johnson" }
-                };
-            }
+            _employeeService = employeeService;            
         }
+
         public virtual EmployeeModel GetEmployeeDetails(int id)
         {
             var employee = _employeeService.GetEmployeeDetails(id);
@@ -29,6 +20,9 @@ namespace Decorator
             return employee;
         }
 
-        public abstract void PostOperation(EmployeeModel employee);
+        public virtual void PostOperation(EmployeeModel employee)
+        {
+            Console.WriteLine($"Post operation for employee with ID: {employee.Id}");
+        }
     }
 }

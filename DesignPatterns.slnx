@@ -16,4 +16,5 @@
     <Build Solution="*|x86" Project="false" />
   </Project>
   <Project Path="Structural/Decorator/Decorator.csproj" />
+  <Project Path="Structural/Strategy/Strategy.csproj" />
 </Solution>

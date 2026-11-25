@@ -4,25 +4,28 @@ using System.Text;
 
 namespace Decorator
 {
-    public class EmployeeUpdateDecorator : CustomDecorator
+    public class EmployeeUpdateDecorator : ICustomDecorator
     {
-        public EmployeeUpdateDecorator(IEmployeeService employeeService) : base(employeeService)
+        private readonly IEmployeeService _employeeService;
+        public EmployeeUpdateDecorator(IEmployeeService employeeService) 
         {
+            _employeeService = employeeService;
         }
 
-        public override EmployeeModel GetEmployeeDetails(int id)
+        public EmployeeModel GetEmployeeDetails(int id)
         {
-            return base.GetEmployeeDetails(id);
+            Console.WriteLine($"EmployeeUpdateDecorator - Get - Fetching details for employee with ID: {id}");
+            return _employeeService.GetEmployeeDetails(id);
         }
 
-        public override void PostOperation(EmployeeModel employee)
+        public void PostOperation(EmployeeModel employee)
         {
             EmployeeModel eModel = EmployeeData.Employees.FirstOrDefault(e => e.Id == employee.Id);
             if (eModel != null)
             {
                 eModel.Name = employee.Name;
             }
-            Console.WriteLine($"Update employee with ID: {employee.Id} and Name: {employee.Name}");
+            Console.WriteLine($"EmployeeUpdateDecorator - Post -Update employee with ID: {employee.Id} and Name: {employee.Name}");
         }
     }
 }
